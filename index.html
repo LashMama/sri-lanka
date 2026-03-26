@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Lash Mama Sri Lanka - Premium lash extensions, luxury beauty treatments, and professional training courses in Colombo">
+    <title>Lash Mama - Premium Lash Beauty Studio | Colombo, Sri Lanka</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:wght@200;300;400;500;600;700&family=Italiana&family=Cinzel:wght@400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: #fdfcfb;
+            color: #1a1a1a;
+            line-height: 1.8;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ULTRA-LUXURY ANIMATED GOLDEN GRADIENT */
+        @keyframes shimmer {
+            0% {
+                background-position: -400% center;
+            }
+
+            100% {
+                background-position: 400% center;
+            }
+        }
+
+        @keyframes glow {
+
+            0%,
+            100% {
+                filter: drop-shadow(0 0 25px rgba(198, 159, 112, 0.5)) drop-shadow(0 0 50px rgba(230, 200, 156, 0.4)) drop-shadow(0 0 75px rgba(255, 245, 230, 0.3));
+            }
+
+            50% {
+                filter: drop-shadow(0 0 35px rgba(198, 159, 112, 0.7)) drop-shadow(0 0 70px rgba(230, 200, 156, 0.6)) drop-shadow(0 0 100px rgba(255, 245, 230, 0.5));
+            }
+        }
+
+        @keyframes sparkle {
+
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scale(0.8);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+
+        @keyframes float-gentle {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            33% {
+                transform: translateY(-15px) rotate(3deg);
+            }
+
+            66% {
+                transform: translateY(-8px) rotate(-2deg);
+            }
+        }
+
+        /* HEADER - ULTRA RESPONSIVE */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(253, 252, 251, 0.98);
+            backdrop-filter: blur(30px) saturate(180%);
+            -webkit-backdrop-filter: blur(30px) saturate(180%);
+            border-bottom: 1px solid rgba(198, 159, 112, 0.08);
+            padding: clamp(14px, 3vw, 22px) clamp(20px, 5vw, 60px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        header.scrolled {
+            padding: clamp(12px, 2.5vw, 16px) clamp(20px, 5vw, 60px);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.06);
+            background: rgba(253, 252, 251, 0.99);
+        }
+
+        .header-content {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: clamp(20px, 4vw, 28px);
+            font-weight: 500;
+            letter-spacing: clamp(3px, 1vw, 6px);
+            background: linear-gradient(135deg, #c69f70 0%, #d4af7a 30%, #e6c89c 50%, #d4af7a 70%, #c69f70 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+            font-family: 'Italiana', serif;
+            animation: shimmer 3s linear infinite;
+        }
+
+        nav {
+            display: flex;
+            gap: clamp(20px, 4vw, 50px);
+            align-items: center;
+        }
+
+        nav a {
+            color: #3a3a3a;
+            text-decoration: none;
+            font-size: clamp(9px, 1.8vw, 11px);
+            letter-spacing: clamp(1.5px, 0.3vw, 2px);
+            text-transform: uppercase;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 500;
+            font-family: 'Montserrat', sans-serif;
+            position: relative;
+            padding: 8px 0;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #c69f70, transparent);
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        nav a:hover {
+            color: #c69f70;
+            transform: translateY(-2px);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* MOBILE MENU */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .menu-toggle span {
+            width: 28px;
+            height: 2px;
+            background: linear-gradient(135deg, #c69f70 0%, #d4af7a 100%);
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* HERO SECTION - ULTRA LUXURY COUTURE */
+        .hero {
+            margin-top: clamp(70px, 12vw, 90px);
+            min-height: 100vh;
+            min-height: 100svh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg,
+                    #fdfcfb 0%,
+                    #f9f6f2 25%,
+                    #f5f0ea 50%,
+                    #f9f6f2 75%,
+                    #fdfcfb 100%);
+            position: relative;
+            overflow: hidden;
+            padding: clamp(50px, 10vw, 120px) clamp(20px, 5vw, 60px);
+        }
+
+        /* Luxury ambient glow orbs */
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: min(1000px, 180vw);
+            height: min(1000px, 180vw);
+            background: radial-gradient(circle,
+                    rgba(230, 200, 156, 0.12) 0%,
+                    rgba(198, 159, 112, 0.08) 30%,
+                    transparent 70%);
+            top: -25%;
+            right: -20%;
+            animation: float-gentle 25s ease-in-out infinite;
+            pointer-events: none;
+            filter: blur(60px);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: min(800px, 150vw);
+            height: min(800px, 150vw);
+            background: radial-gradient(circle,
+                    rgba(255, 245, 230, 0.1) 0%,
+                    rgba(230, 200, 156, 0.06) 40%,
+                    transparent 70%);
+            bottom: -20%;
+            left: -15%;
+            animation: float-gentle 20s ease-in-out infinite reverse;
+            pointer-events: none;
+            filter: blur(50px);
+        }
+
+        /* Sparkling particles for ultra-premium feel */
+        .hero-sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: radial-gradient(circle, #fff5e6, #e6c89c);
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+            animation: sparkle 4s ease-in-out infinite;
+        }
+
+        .hero-sparkle:nth-child(1) {
+            top: 20%;
+            left: 15%;
+            animation-delay: 0s;
+        }
+
+        .hero-sparkle:nth-child(2) {
+            top: 40%;
+            right: 20%;
+            animation-delay: 1.5s;
+        }
+
+        .hero-sparkle:nth-child(3) {
+            bottom: 30%;
+            left: 25%;
+            animation-delay: 3s;
+        }
+
+        .hero-sparkle:nth-child(4) {
+            top: 60%;
+            right: 30%;
+            animation-delay: 2s;
+        }
+
+        .hero-sparkle:nth-child(5) {
+            bottom: 45%;
+            right: 15%;
+            animation-delay: 0.5s;
+        }
+
+        .hero-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(50px, 10vw, 120px);
+            align-items: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 100%;
+        }
+
+        /* Premium top badge with enhanced styling */
+        .hero-badge {
+            display: inline-block;
+            padding: clamp(8px, 2vw, 10px) clamp(24px, 5vw, 32px);
+            background: linear-gradient(135deg,
+                    rgba(255, 255, 255, 0.95) 0%,
+                    rgba(255, 250, 245, 0.9) 100%);
+            border: 1.5px solid rgba(198, 159, 112, 0.4);
+            border-radius: 50px;
+            font-size: clamp(8px, 1.8vw, 10px);
+            letter-spacing: clamp(2px, 0.5vw, 3px);
+            text-transform: uppercase;
+            color: #c69f70;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: clamp(30px, 6vw, 45px);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 8px 30px rgba(198, 159, 112, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            position: relative;
+        }
+
+        .hero-badge::before {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            background: radial-gradient(circle, rgba(198, 159, 112, 0.1), transparent 70%);
+            filter: blur(15px);
+            z-index: -1;
+        }
+
+        /* Luxurious logo presentation */
+        .hero-logo {
+            margin-bottom: clamp(35px, 7vw, 60px);
+            animation: fadeInUp 1.2s ease-out;
+            position: relative;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-logo::before {
+            content: '';
+            position: absolute;
+            inset: -30px;
+            background: radial-gradient(ellipse, rgba(230, 200, 156, 0.15) 0%, transparent 60%);
+            filter: blur(40px);
+            z-index: -1;
+        }
+
+        .hero-logo img {
+            max-width: min(90%, 520px);
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 15px 60px rgba(198, 159, 112, 0.25)) drop-shadow(0 5px 20px rgba(0, 0, 0, 0.08));
+        }
+
+        /* Ultra-premium headline */
+        .hero h1 {
+            font-size: clamp(40px, 11vw, 92px);
+            font-weight: 300;
+            letter-spacing: clamp(1px, 0.4vw, 4px);
+            margin-bottom: clamp(18px, 3.5vw, 24px);
+            color: #1a1a1a;
+            line-height: 1.05;
+            animation: fadeInUp 1.4s ease-out 0.2s both;
+            font-family: 'Cinzel', serif;
+        }
+
+        /* THE SHOWSTOPPER: Ultra-luxury animated gradient on "Expertise" */
+        .hero h1 .highlight {
+            font-weight: 500;
+            font-style: italic;
+            background: linear-gradient(135deg,
+                    #d4a574 0%,
+                    #e6c89c 15%,
+                    #fff8ec 25%,
+                    #fffdf7 35%,
+                    #fff8ec 45%,
+                    #e6c89c 60%,
+                    #d4af7a 75%,
+                    #c69f70 90%,
+                    #d4a574 100%);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 5s ease-in-out infinite, glow 4s ease-in-out infinite;
+            display: inline-block;
+            position: relative;
+            text-shadow: none;
+        }
+
+        /* Multi-layer glow halo effect */
+        .hero h1 .highlight::before {
+            content: '';
+            position: absolute;
+            inset: -15px;
+            background: radial-gradient(ellipse,
+                    rgba(230, 200, 156, 0.3) 0%,
+                    rgba(198, 159, 112, 0.15) 40%,
+                    transparent 70%);
+            filter: blur(25px);
+            z-index: -1;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        .hero h1 .highlight::after {
+            content: '';
+            position: absolute;
+            inset: -25px;
+            background: radial-gradient(ellipse,
+                    rgba(255, 245, 230, 0.2) 0%,
+                    transparent 60%);
+            filter: blur(40px);
+            z-index: -2;
+            animation: pulse 4s ease-in-out infinite 0.5s;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0.6;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.15);
+            }
+        }
+
+        /* Elegant subtitle */
+        .hero h2 {
+            font-size: clamp(17px, 3.8vw, 24px);
+            font-weight: 400;
+            background: linear-gradient(135deg, #c69f70 0%, #d4af7a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: clamp(22px, 4.5vw, 32px);
+            letter-spacing: clamp(1px, 0.3vw, 2px);
+            font-style: italic;
+            font-family: 'Cormorant Garamond', serif;
+            animation: fadeInUp 1.6s ease-out 0.4s both;
+        }
+
+        /* Refined body copy */
+        .hero p {
+            font-size: clamp(14px, 3vw, 18px);
+            color: #555;
+            margin-bottom: clamp(40px, 8vw, 65px);
+            line-height: 2;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1.8s ease-out 0.6s both;
+            letter-spacing: 0.3px;
+        }
+
+        /* Premium CTA group */
+        .cta-group {
+            display: flex;
+            gap: clamp(18px, 3.5vw, 24px);
+            flex-wrap: wrap;
+            justify-content: center;
+            animation: fadeInUp 2s ease-out 0.8s both;
+        }
+
+        .btn {
+            padding: clamp(14px, 3vw, 18px) clamp(40px, 8vw, 60px);
+            font-size: clamp(9px, 1.8vw, 10px);
+            letter-spacing: clamp(2.5px, 0.5vw, 3px);
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            transform: translate(-50%, -50%);
+            transition: width 0.7s, height 0.7s;
+        }
+
+        .btn:hover::before {
+            width: 500px;
+            height: 500px;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #c69f70 0%, #d4af7a 50%, #e6c89c 100%);
+            color: #fff;
+            box-shadow: 0 12px 40px rgba(198, 159, 112, 0.35),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 50px rgba(198, 159, 112, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        }
+
+        .btn-gold:active {
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.7);
+            color: #c69f70;
+            border: 2px solid #c69f70;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-outline:hover {
+            background: linear-gradient(135deg, #c69f70 0%, #d4af7a 100%);
+            color: #fff;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(198, 159, 112, 0.35);
+        }
+
+        /* HERO IMAGE - COUTURE PRESENTATION */
+        .hero-image-wrapper {
+            position: relative;
+            width: 100%;
+            height: clamp(450px, 75vh, 800px);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .hero-image-frame {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: clamp(25px, 5vw, 40px);
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.18),
+                0 10px 30px rgba(198, 159, 112, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .hero-image-frame::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg,
+                    rgba(230, 200, 156, 0.15) 0%,
+                    transparent 50%,
+                    rgba(198, 159, 112, 0.1) 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Luxury outer glow */
+        .hero-image-frame::after {
+            content: '';
+            position: absolute;
+            inset: -30px;
+            background: radial-gradient(ellipse, rgba(230, 200, 156, 0.2), transparent 70%);
+            filter: blur(40px);
+            z-index: -1;
+        }
+
+        .hero-image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Premium floating badge */
+        .hero-floating-badge {
+            position: absolute;
+            bottom: clamp(25px, 5vw, 50px);
+            right: clamp(25px, 5vw, 50px);
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            padding: clamp(20px, 4vw, 30px) clamp(28px, 6vw, 45px);
+            border-radius: clamp(18px, 3.5vw, 25px);
+            box-shadow: 0 15px 60px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 1);
+            border: 1.5px solid rgba(198, 159, 112, 0.3);
+            z-index: 2;
+        }
+
+        .floating-badge-title {
+            font-size: clamp(9px, 2vw, 12px);
+            letter-spacing: clamp(2px, 0.4vw, 2.5px);
+            text-transform: uppercase;
+            color: #c69f70;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: clamp(6px, 1.2vw, 10px);
+        }
+
+        .floating-badge-text {
+            font-size: clamp(20px, 4.5vw, 28px);
+            color: #1a1a1a;
+            font-weight: 500;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 0.5px;
+        }
+
+        /* Elegant decorative elements */
+        .hero-decor-1,
+        .hero-decor-2 {
+            position: absolute;
+            border: 1.5px solid rgba(198, 159, 112, 0.2);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-decor-1 {
+            top: 18%;
+            left: -40px;
+            width: clamp(70px, 14vw, 120px);
+            height: clamp(70px, 14vw, 120px);
+            animation: rotate 35s linear infinite;
+            box-shadow: 0 0 30px rgba(230, 200, 156, 0.1);
+        }
+
+        .hero-decor-2 {
+            bottom: 25%;
+            right: -25px;
+            width: clamp(50px, 10vw, 80px);
+            height: clamp(50px, 10vw, 80px);
+            animation: rotate 25s linear infinite reverse;
+            box-shadow: 0 0 25px rgba(230, 200, 156, 0.1);
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* SECTIONS - FULLY RESPONSIVE */
+        .section {
+            padding: clamp(60px, 12vw, 130px) clamp(20px, 5vw, 60px);
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: clamp(32px, 8vw, 58px);
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: clamp(15px, 3vw, 25px);
+            color: #1a1a1a;
+            letter-spacing: clamp(1px, 0.2vw, 2px);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: clamp(13px, 2.8vw, 16px);
+            color: #888;
+            margin-bottom: clamp(50px, 10vw, 80px);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 20px;
+        }
+
+        /* PRODUCTS */
+        .products-section {
+            background: #fdfcfb;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+            gap: clamp(30px, 6vw, 50px);
+        }
+
+        .product-card {
+            background: #fff;
+            border: 1px solid rgba(198, 159, 112, 0.12);
+            border-radius: clamp(18px, 3.5vw, 25px);
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+        }
+
+        .product-card:hover {
+            transform: translateY(-12px);
+            border-color: #c69f70;
+            box-shadow: 0 20px 50px rgba(198, 159, 112, 0.2);
+        }
+
+        .product-image {
+            width: 100%;
+            height: clamp(220px, 40vw, 320px);
+            overflow: hidden;
+            background: #f9f6f2;
+            display: block;
+            padding: 0;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @media (max-width: 768px) {
+            .product-image {
+                height: auto;
+                aspect-ratio: 1 / 1;
+            }
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.08);
+        }
+
+        .product-info {
+            padding: clamp(25px, 5vw, 40px);
+        }
+
+        .product-name {
+            font-size: clamp(18px, 4vw, 24px);
+            font-weight: 400;
+            margin-bottom: clamp(12px, 2.5vw, 15px);
+            color: #1a1a1a;
+            letter-spacing: 0.5px;
+        }
+
+        .product-desc {
+            font-size: clamp(12px, 2.5vw, 14px);
+            color: #888;
+            margin-bottom: clamp(20px, 4vw, 28px);
+            line-height: 1.9;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+        }
+
+        .product-price {
+            font-size: clamp(20px, 4.5vw, 26px);
+            font-weight: 500;
+            background: linear-gradient(135deg, #c69f70 0%, #d4af7a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: clamp(20px, 4vw, 28px);
+        }
+
+        .product-card .btn {
+            width: 100%;
+            padding: clamp(11px, 2.2vw, 14px) 20px;
+        }
+
+        /* COURSES */
+        .courses-section {
+            background: #fdfcfb;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+            gap: clamp(30px, 6vw, 50px);
+        }
+
+        .course-card {
+            background: #fff;
+            border: 1px solid rgba(198, 159, 112, 0.12);
+            padding: clamp(35px, 7vw, 55px) clamp(30px, 6vw, 45px);
+            border-radius: clamp(18px, 3.5vw, 25px);
+            text-align: center;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            border-color: #c69f70;
+            box-shadow: 0 18px 50px rgba(198, 159, 112, 0.2);
+        }
+
+        .course-name {
+            font-size: clamp(19px, 4.2vw, 26px);
+            font-weight: 400;
+            margin-bottom: clamp(14px, 3vw, 18px);
+            color: #1a1a1a;
+            letter-spacing: 0.5px;
+        }
+
+        .course-desc {
+            font-size: clamp(12px, 2.5vw, 14px);
+            color: #888;
+            margin-bottom: clamp(22px, 4.5vw, 30px);
+            line-height: 1.9;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+        }
+
+        .course-price {
+            font-size: clamp(22px, 5vw, 28px);
+            font-weight: 500;
+            background: linear-gradient(135deg, #c69f70 0%, #d4af7a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: clamp(25px, 5vw, 35px);
+        }
+
+        .course-card .btn {
+            width: 100%;
+        }
+
+        /* TEAM */
+        .team-section {
+            background: linear-gradient(135deg, #fdfcfb 0%, #f9f6f2 100%);
+            padding: clamp(60px, 10vw, 120px) clamp(20px, 5vw, 60px);
+        }
+
+        .team-grid.single-member {
+            display: flex;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .team-member {
+            text-align: center;
+            max-width: 480px;
+        }
+
+        .member-photo {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            background: #fff;
+            border-radius: clamp(20px, 4vw, 30px);
+            margin-bottom: clamp(30px, 6vw, 40px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            border: 1px solid rgba(198, 159, 112, 0.25);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .team-member:hover .member-photo {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 70px rgba(198, 159, 112, 0.18);
+            border-color: rgba(198, 159, 112, 0.6);
+        }
+
+        .member-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .member-name {
+            font-size: clamp(24px, 5vw, 34px);
+            font-weight: 400;
+            margin-bottom: clamp(10px, 1.8vw, 14px);
+            color: #1a1a1a;
+            letter-spacing: 0.5px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .member-title {
+            font-size: clamp(10px, 2vw, 12px);
+            color: #c69f70;
+            margin-bottom: clamp(20px, 4vw, 30px);
+            text-transform: uppercase;
+            letter-spacing: clamp(2px, 0.4vw, 3px);
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .member-bio {
+            font-size: clamp(12px, 2.5vw, 15px);
+            color: #666;
+            line-height: 1.9;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            padding: 0 15px;
+        }
+
+        /* LOCATION */
+        .location-section {
+            background: #fdfcfb;
+        }
+
+        .location-wrapper {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: clamp(40px, 8vw, 90px);
+            align-items: start;
+        }
+
+        .location-info h3 {
+            font-size: clamp(16px, 3.5vw, 20px);
+            font-weight: 600;
+            background: linear-gradient(135deg, #c69f70 0%, #d4af7a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+            letter-spacing: clamp(1.5px, 0.3vw, 2px);
+            margin-bottom: clamp(20px, 4vw, 30px);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .location-info p {
+            font-size: clamp(13px, 2.8vw, 16px);
+            color: #666;
+            margin-bottom: clamp(20px, 4vw, 30px);
+            line-height: 2;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+        }
+
+        .detail-list {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(20px, 4vw, 28px);
+            margin-top: clamp(30px, 6vw, 45px);
+        }
+
+        .detail {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(8px, 1.5vw, 12px);
+            padding: clamp(16px, 3vw, 20px) 0;
+            border-bottom: 1px solid rgba(198, 159, 112, 0.12);
+        }
+
+        .detail:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            font-size: clamp(9px, 1.8vw, 10px);
+            text-transform: uppercase;
+            letter-spacing: clamp(1px, 0.2vw, 1.5px);
+            font-weight: 700;
+            color: #c69f70;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .detail-value {
+            font-size: clamp(13px, 2.8vw, 16px);
+            color: #1a1a1a;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+        }
+
+        .detail-value a {
+            color: #c69f70;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .detail-value a:hover {
+            color: #d4af7a;
+            text-decoration: underline;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: clamp(300px, 50vw, 500px);
+            background: linear-gradient(135deg, #fdfcfb 0%, #f9f6f2 100%);
+            border-radius: clamp(18px, 3.5vw, 25px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #c69f70;
+            font-family: 'Montserrat', sans-serif;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(198, 159, 112, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-placeholder::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: 0.03;
+            background-image: url("https://www.transparenttextures.com/patterns/linen.png");
+        }
+
+        /* CONTACT */
+        .contact-section {
+            background: linear-gradient(135deg, #f9f6f2 0%, #f5f0ea 100%);
+            text-align: center;
+        }
+
+        .contact-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .contact-title {
+            font-size: clamp(36px, 8vw, 56px);
+            margin-bottom: clamp(18px, 3.5vw, 25px);
+            font-weight: 300;
+            color: #1a1a1a;
+            letter-spacing: clamp(1px, 0.2vw, 2px);
+        }
+
+        .contact-desc {
+            font-size: clamp(13px, 2.8vw, 16px);
+            color: #666;
+            margin-bottom: clamp(40px, 8vw, 60px);
+            line-height: 2;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            padding: 0 20px;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+            gap: clamp(20px, 4vw, 35px);
+            margin-bottom: clamp(40px, 8vw, 60px);
+        }
+
+        .contact-method {
+            padding: clamp(30px, 6vw, 45px) clamp(25px, 5vw, 40px);
+            background: #fff;
+            border: 1px solid rgba(198, 159, 112, 0.12);
+            border-radius: clamp(18px, 3.5vw, 25px);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+        }
+
+        .contact-method:hover {
+            transform: translateY(-8px);
+            border-color: #c69f70;
+            box-shadow: 0 16px 50px rgba(198, 159, 112, 0.2);
+        }
+
+        .contact-method a {
+            background: linear-gradient(135deg, #c69f70 0%, #d4af7a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            font-size: clamp(16px, 3.5vw, 20px);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #fff;
+            border-top: 1px solid rgba(198, 159, 112, 0.12);
+            padding: clamp(50px, 10vw, 80px) clamp(20px, 5vw, 60px) clamp(30px, 6vw, 40px);
+            text-align: center;
+        }
+
+        .footer-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-size: clamp(20px, 4.5vw, 26px);
+            font-weight: 500;
+            letter-spacing: clamp(3px, 0.8vw, 5px);
+            background: linear-gradient(135deg, #c69f70 0%, #d4af7a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+            margin-bottom: clamp(20px, 4vw, 30px);
+            font-family: 'Italiana', serif;
+        }
+
+        .footer-text {
+            font-size: clamp(12px, 2.5vw, 14px);
+            color: #aaa;
+            margin-bottom: clamp(16px, 3.5vw, 22px);
+            line-height: 1.9;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            padding: 0 20px;
+        }
+
+        .footer-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(198, 159, 112, 0.3), transparent);
+            margin: clamp(30px, 6vw, 45px) 0;
+        }
+
+        .footer-bottom {
+            font-size: clamp(10px, 2vw, 11px);
+            color: #ccc;
+            letter-spacing: clamp(0.5px, 0.1vw, 1px);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+        }
+
+        /* TABLET SPECIFIC */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                max-width: 700px;
+            }
+
+            .location-wrapper {
+                grid-template-columns: 1fr;
+                max-width: 700px;
+                margin: 0 auto;
+            }
+        }
+
+        /* DESKTOP OPTIMIZATION */
+        @media (min-width: 1025px) {
+            .hero-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero-content {
+                text-align: left;
+                padding-right: 40px;
+            }
+
+            .hero-badge,
+            .cta-group {
+                justify-content: flex-start;
+            }
+
+            .hero p {
+                margin-left: 0;
+            }
+
+            .location-wrapper {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .detail {
+                flex-direction: row;
+                gap: 25px;
+            }
+
+            .detail-label {
+                min-width: 100px;
+            }
+        }
+
+        /* MOBILE MENU RESPONSIVE */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            nav {
+                position: fixed;
+                top: clamp(64px, 12vw, 80px);
+                left: 0;
+                right: 0;
+                background: rgba(253, 252, 251, 0.98);
+                backdrop-filter: blur(30px);
+                flex-direction: column;
+                gap: 0;
+                padding: 30px 0;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+                border-bottom: 1px solid rgba(198, 159, 112, 0.15);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            nav.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            nav a {
+                padding: 15px 40px;
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid rgba(198, 159, 112, 0.08);
+            }
+
+            nav a:last-child {
+                border-bottom: none;
+            }
+
+            nav a::after {
+                display: none;
+            }
+        }
+
+        /* SMOOTH SCROLL PADDING FOR MOBILE MENU */
+        html {
+            scroll-padding-top: 100px;
+        }
+
+        /* PERFORMANCE OPTIMIZATIONS */
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        img {
+            image-rendering: -webkit-optimize-contrast;
+        }
+
+        /* ACCESSIBILITY */
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header id="header">
+        <div class="header-content">
+            <div class="logo">Lash Mama</div>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav id="nav">
+                <a href="#products">Products</a>
+                <a href="#courses">Courses</a>
+                <a href="#location">Location</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <!-- Luxury sparkle particles -->
+        <div class="hero-sparkle"></div>
+        <div class="hero-sparkle"></div>
+        <div class="hero-sparkle"></div>
+        <div class="hero-sparkle"></div>
+        <div class="hero-sparkle"></div>
+
+        <div class="hero-decor-1"></div>
+        <div class="hero-decor-2"></div>
+
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">✦ AUSTRALIA'S PREMIER LASH BRAND • NOW IN KANDY</div>
+
+                <div class="hero-logo">
+                    <img src="logolm.png" alt="Lash Mama Logo">
+                </div>
+
+                <h1>Global <span class="highlight">Expertise</span><br>Local Elegance</h1>
+
+                <h2>Award-Winning Artistry by Purni Ranasinha</h2>
+
+                <p>From Australia to Sri Lanka, the LASH MAMA™ legacy expands. Led by multiple-award winner Purni
+                    Ranasinha,
+                    we bring over 2 decades of Australian excellence to Sri Lanka. Experience bespoke lash extensions
+                    and professional-grade products designed for the modern woman who demands the best.</p>
+
+                <div class="cta-group">
+                    <button class="btn btn-gold" onclick="bookAppointment()">Reserve Your Experience</button>
+                    <button class="btn btn-outline" onclick="scrollTo('products')">View Collection</button>
+                </div>
+            </div>
+
+            <div class="hero-image-wrapper">
+                <div class="hero-image-frame">
+                    <img src="lk-hero.png" alt="Purni Ranasinha - Lash Mama Excellence">
+                </div>
+                <div class="hero-floating-badge">
+                    <div class="floating-badge-title">Award Winning</div>
+                    <div class="floating-badge-text">Australia & Sri Lanka</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="section products-section" id="products">
+        <h2 class="section-title">Signature Collection</h2>
+        <p class="section-subtitle">Curated luxury beauty essentials designed for discerning enthusiasts</p>
+
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="glue.png" alt="Platinum Pro Lash Adhesive">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Platinum Pro Adhesive</h3>
+                    <p class="product-desc">Fast-drying, latex-free formula with a 1-2 second set time. Designed for
+                        maximum retention and professional precision.</p>
+                    <div class="product-price">₨21,500</div>
+                    <button class="btn btn-gold" onclick="enquireProduct('Platinum Pro Adhesive')">Enquire Now</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="lipgloss.jpg" alt="Ultimate Stay-On Lip Gloss">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Ultimate Stay-On Gloss</h3>
+                    <p class="product-desc">Thirteen stunning shades in matte, glitter, and metallic finishes. A
+                        waterproof, vibrant formula for a statement look.</p>
+                    <div class="product-price">₨13,800</div>
+                    <button class="btn btn-gold" onclick="enquireProduct('Ultimate Stay-On Gloss')">Enquire Now</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="illuminator_lash_mama.png" alt="Glow Queen Illuminator">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Glow Queen Illuminator</h3>
+                    <p class="product-desc">A silky, lightweight formula for a flawless contoured glow. Blends
+                        seamlessly for a radiant, glass-skin finish.</p>
+                    <div class="product-price">₨21,200</div>
+                    <button class="btn btn-gold" onclick="enquireProduct('Glow Queen Illuminator')">Enquire Now</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="lipstick.jpg" alt="Gold-Rhine-Stone Lipstick">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Sensual Matte Lipstick</h3>
+                    <p class="product-desc">Rich, creamy color housed in an elegant gold rhinestone case. Delivers
+                        smooth, vibrant pigment with a touch of luxury.</p>
+                    <div class="product-price">₨10,700</div>
+                    <button class="btn btn-gold" onclick="enquireProduct('Sensual Matte Lipstick')">Enquire Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COURSES -->
+    <section class="section courses-section" id="courses">
+        <h2 class="section-title">Professional Training</h2>
+        <p class="section-subtitle">Master the art of lash extensions with our comprehensive certification programs</p>
+
+        <div class="courses-grid">
+            <div class="course-card">
+                <h3 class="course-name">Sinhalese Lash Masterclass Part 1</h3>
+                <p class="course-desc">Learn foundational techniques, safety protocols, and basic lash mapping with our
+                    expert instructors in an immersive environment.</p>
+                <div class="course-price">₨18,000</div>
+                <a href="https://www.lashmama.com.au" target="_blank" class="btn btn-gold">Learn More</a>
+            </div>
+
+            <div class="course-card">
+                <h3 class="course-name">Sinhalese Lash Masterclass Part 2</h3>
+                <p class="course-desc">Advanced techniques, complex mapping, troubleshooting, and professional client
+                    care excellence for certified artists.</p>
+                <div class="course-price">₨18,000</div>
+                <a href="https://www.lashmama.com.au" target="_blank" class="btn btn-gold">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section team-section" id="team">
+        <h2 class="section-title">Local Leadership</h2>
+        <p class="section-subtitle">Your expert point of contact for Sri Lankan operations, stock coordination, and
+            purchasing enquiries.</p>
+
+        <div class="team-grid single-member">
+            <div class="team-member">
+                <div class="member-photo">
+                    <img src="ishanka.png" alt="Ishanka Ranasinghe - Sri Lankan Country Manager">
+                </div>
+                <h3 class="member-name">Ishanka Ranasinghe</h3>
+                <p class="member-title">Sri Lankan Country Manager</p>
+                <p class="member-bio">
+                    Expertly managing our Sri Lankan operations, logistics, and inventory.
+                    Ishanka coordinates all local stock procurement and purchasing,
+                    ensuring a seamless experience for our discerning LASH MAMA™
+                    clientele in Colombo and beyond.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section class="section location-section" id="location">
+        <h2 class="section-title">Our Kandy Studio</h2>
+        <p class="section-subtitle">An exclusive sanctuary of beauty in the heart of Sri Lanka</p>
+
+        <div class="location-wrapper">
+            <div class="location-info">
+                <h3>Visit Our Boutique</h3>
+                <p>Our Kandy operations are designed around personal service and flexibility. We offer professional
+                    consultations and product pickups through our local manager. Whether you are coming to us or
+                    coordinating a meeting at a preferred local spot, we ensure a smooth, high-standard experience every
+                    time.</p>
+
+                <div class="detail-list">
+                    <div class="detail">
+                        <span class="detail-label">Location</span>
+                        <span class="detail-value">Private • Kandy (Provided upon appointment)</span>
+                    </div>
+
+                    <div class="detail">
+                        <span class="detail-label">Phone</span>
+                        <span class="detail-value">
+                            <a href="tel:+94771662242">+94 77 166 2242</a>
+                        </span>
+                    </div>
+
+                    <div class="detail">
+                        <span class="detail-label">WhatsApp</span>
+                        <span class="detail-value">
+                            <a
+                                href="https://wa.me/94771662242?text=Hello%20Ishanka,%20I%20would%20like%20to%20enquire%20about%20Lash%20Mama%20Kandy.">+94
+                                77 166 2242</a>
+                        </span>
+                    </div>
+                    <div class="detail">
+                        <span class="detail-label">Hours</span>
+                        <span class="detail-value">Monday - Sunday: 10:00 AM - 8:00 PM</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="map-placeholder">
+                <div style="text-align: center; padding: 40px;">
+                    <span style="font-size: 30px; display: block; margin-bottom: 15px;">📍</span>
+                    <h4
+                        style="font-family: 'Cormorant Garamond', serif; font-size: 24px; color: #1a1a1a; margin-bottom: 10px; font-weight: 400;">
+                        Kandy Private Suite</h4>
+                    <p
+                        style="text-transform: uppercase; letter-spacing: 2px; font-size: 10px; color: #c69f70; font-weight: 600;">
+                        Location Details Shared Upon Booking</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact-section" id="contact">
+        <div class="contact-inner">
+            <h2 class="contact-title">Get In Touch</h2>
+            <p class="contact-desc">Have questions or ready to book your appointment? We are here to help you achieve
+                the perfect lash look. Reach out via your preferred method.</p>
+
+            <div class="contact-methods">
+                <div class="contact-method">
+                    <a href="tel:+94771662242">+94 77 166 2242</a>
+                </div>
+
+                <div class="contact-method">
+                    <a
+                        href="https://wa.me/94771662242?text=Hello%20Ishanka,%20I%20would%20like%20to%20enquire%20about%20Lash%20Mama%20products%20and%20services.">WhatsApp</a>
+                </div>
+                <div class="contact-method">
+                    <a href="mailto:lashmama11@gmail.com">Email</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-wrapper">
+            <div class="footer-logo">Lash Mama</div>
+            <p class="footer-text">Premium lash extensions, luxury treatments and professional training. Celebrating
+                beauty in Sri Lanka.</p>
+            <div class="footer-divider"></div>
+            <p class="footer-bottom">Copyright © 2026 Lash Mama. All Rights Reserved. | Kandy, Sri Lanka</p>
+        </div>
+    </footer>
+
+    <script>
+        // ⚡ CRITICAL: Force scroll to top on ALL page loads (fixes mobile GitHub Pages issue)
+        // Execute immediately
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+
+        // On page load
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                window.scrollTo(0, 0);
+                document.documentElement.scrollTop = 0;
+                document.body.scrollTop = 0;
+            }, 0);
+        });
+
+        // On DOM ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function () {
+                window.scrollTo(0, 0);
+                document.documentElement.scrollTop = 0;
+                document.body.scrollTop = 0;
+            });
+        }
+
+        // Prevent scroll restoration
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', function () {
+            const header = document.getElementById('header');
+            if (window.scrollY > 30) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const nav = document.getElementById('nav');
+
+        menuToggle.addEventListener('click', function () {
+            this.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+
+        // Close menu when clicking nav links
+        const navLinks = nav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function () {
+                menuToggle.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function (event) {
+            const isClickInsideNav = nav.contains(event.target);
+            const isClickOnToggle = menuToggle.contains(event.target);
+
+            if (!isClickInsideNav && !isClickOnToggle && nav.classList.contains('active')) {
+                menuToggle.classList.remove('active');
+                nav.classList.remove('active');
+            }
+        });
+
+        function scrollTo(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function bookAppointment() {
+            if (window.innerWidth <= 768) {
+                window.location.href = 'tel:+94771662242';
+            } else {
+                alert('Thank you! Please call +94 77 166 2242 or WhatsApp to reserve your appointment.');
+            }
+        }
+
+        function enquireProduct(product) {
+            if (window.innerWidth <= 768) {
+                window.location.href = 'https://wa.me/94771662242?text=' + encodeURIComponent('I would like to enquire about ' + product);
+            } else {
+                alert(`Thank you for your interest in ${product}! Please contact us at +94 77 166 2242 to enquire.`);
+            }
+        }
+    </script>
+</body>
+
+</html>
